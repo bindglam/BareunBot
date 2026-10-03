@@ -1,0 +1,30 @@
+{
+  "slang": {
+    "count": 20,
+    "correct": 20
+  },
+  "sniping": {
+    "count": 20,
+    "correct": 20
+  },
+  "conflict": {
+    "count": 20,
+    "correct": 20
+  },
+  "unsafe_topic": {
+    "count": 20,
+    "correct": 20
+  },
+  "political": {
+    "count": 20,
+    "correct": 18
+  },
+  "long_text": {
+    "count": 20,
+    "correct": 20
+  },
+  "other": {
+    "count": 19,
+    "correct": 19
+  }
+}
