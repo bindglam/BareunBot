@@ -1,0 +1,842 @@
+[
+  {
+    "category": "slang",
+    "content": "야 이 개새끼야 내 필통 내놔라",
+    "should_censored": true,
+    "reason": "직접적이고 공격적인 욕설 표현 포함"
+  },
+  {
+    "category": "slang",
+    "content": "진짜 ㅈㄴ 짜증나네 수업 언제 끝나냐",
+    "should_censored": true,
+    "reason": "비속어 초성 표현(ㅈㄴ) 사용"
+  },
+  {
+    "category": "slang",
+    "content": "병신같이 숙제도 안 해왔냐?",
+    "should_censored": true,
+    "reason": "타인을 모욕하고 비하하는 욕설 사용"
+  },
+  {
+    "category": "slang",
+    "content": "시1발 오늘 체육 비와서 취소됨 실화냐",
+    "should_censored": true,
+    "reason": "숫자를 혼용한 변형 욕설 사용"
+  },
+  {
+    "category": "slang",
+    "content": "지랄하지 말고 조용히 해라",
+    "should_censored": true,
+    "reason": "거친 비속어 표현 포함"
+  },
+  {
+    "category": "slang",
+    "content": "미친놈인가 갑자기 소리를 지르고 난리야",
+    "should_censored": true,
+    "reason": "상대방에 대한 인격 모욕성 비속어 포함"
+  },
+  {
+    "category": "slang",
+    "content": "아가리 닥치고 자리에 앉아라",
+    "should_censored": true,
+    "reason": "신체 부위를 비하하는 거친 욕설조 표현"
+  },
+  {
+    "category": "slang",
+    "content": "ㅅㅂ 수행평가 범위 왜 이럼?",
+    "should_censored": true,
+    "reason": "욕설 초성 필터링 우회 시도"
+  },
+  {
+    "category": "slang",
+    "content": "오늘 숙제 분량이 진짜 많아서 너무 힘들다.",
+    "should_censored": false,
+    "reason": "일상적인 피로감과 감정을 표현한 바른말"
+  },
+  {
+    "category": "slang",
+    "content": "체육 대회 때 우리 반 응원 열정적으로 해보자!",
+    "should_censored": false,
+    "reason": "학급 화합을 위한 긍정적 독려 표현"
+  },
+  {
+    "category": "slang",
+    "content": "필통 빌려준 거 고마워, 내일 1교시에 돌려줄게.",
+    "should_censored": false,
+    "reason": "원활한 교우 관계를 위한 일상적 감사 인사"
+  },
+  {
+    "category": "slang",
+    "content": "선생님께서 이번 주 금요일까지 과제 제출하라고 하셨어.",
+    "should_censored": false,
+    "reason": "학사 일정 및 과제 관련 정상 공지"
+  },
+  {
+    "category": "slang",
+    "content": "점심 메뉴에 돈가스 나온다는데 엄청 기대된다.",
+    "should_censored": false,
+    "reason": "급식에 대한 기대감을 나타낸 일상 대화"
+  },
+  {
+    "category": "slang",
+    "content": "수학 문제 5번 풀이 과정 잘 이해가 안 가는데 알려줄 사람?",
+    "should_censored": false,
+    "reason": "학업 관련 건전한 질문 및 도움 요청"
+  },
+  {
+    "category": "slang",
+    "content": "오늘 당번 누구야? 칠판 지우는 것 좀 도와줄게.",
+    "should_censored": false,
+    "reason": "학급 봉사 및 협력을 제안하는 바른 표현"
+  },
+  {
+    "category": "slang",
+    "content": "방과 후에 도서관에서 같이 시험공부 할래?",
+    "should_censored": false,
+    "reason": "건전한 학습 모임을 제안하는 표현"
+  },
+  {
+    "category": "sniping",
+    "content": "2분단 셋째 줄 걔 오늘 샤워 안 하고 옴? 냄새 역대급이네",
+    "should_censored": true,
+    "reason": "특정 좌석 학생을 유추할 수 있게 지목하여 신체적 모욕을 주는 행위"
+  },
+  {
+    "category": "sniping",
+    "content": "민수 폰 비번 1234더라 카톡 훔쳐봤는데 개웃김",
+    "should_censored": true,
+    "reason": "타인의 스마트폰 비밀번호 및 사생활 무단 열람 사실 유포"
+  },
+  {
+    "category": "sniping",
+    "content": "어제 지훈이 학원 째고 피시방 가다 걸린 거 소문 다 났음",
+    "should_censored": true,
+    "reason": "타인의 개인적인 일탈 및 사생활 무단 폭로"
+  },
+  {
+    "category": "sniping",
+    "content": "우리 반에서 제일 뚱뚱한 애 자꾸 나 따라다니지 마라",
+    "should_censored": true,
+    "reason": "신체적 특징을 이용한 특정인 지목 및 공개 망신 주기"
+  },
+  {
+    "category": "sniping",
+    "content": "유나 집 주소 XX아파트 101동 502호래, 찾아갈 사람?",
+    "should_censored": true,
+    "reason": "동의 없는 타인의 상세 거주지 정보 무단 노출"
+  },
+  {
+    "category": "sniping",
+    "content": "앞자리 안경 쓴 애 수업시간에 코 파는 거 다 봤다 더러워",
+    "should_censored": true,
+    "reason": "특정 학생을 지목하여 공개적인 수치심을 유발하는 내용"
+  },
+  {
+    "category": "sniping",
+    "content": "서연이 어제 누구랑 사귄다고 고백받았는지 내가 까발려줄까?",
+    "should_censored": true,
+    "reason": "타인의 사적인 이성 관계를 폭로하겠다는 협박성 글"
+  },
+  {
+    "category": "sniping",
+    "content": "반장 겉으로는 착한 척하면서 뒤에서 애들 험담 장난 아님",
+    "should_censored": true,
+    "reason": "학급 대표에 대한 근거 없는 공개 비방 및 저격"
+  },
+  {
+    "category": "sniping",
+    "content": "오늘 지훈이가 수학 문제 알려줘서 진짜 큰 도움 됐어.",
+    "should_censored": false,
+    "reason": "특정 학우에 대한 건전한 칭찬 및 감사 표현"
+  },
+  {
+    "category": "sniping",
+    "content": "반장아, 내일 학급 회의 안건 미리 단톡방에 올려줄 수 있어?",
+    "should_censored": false,
+    "reason": "학급 임원에 대한 정상적이고 공적인 요청"
+  },
+  {
+    "category": "sniping",
+    "content": "오늘 민수 생일이래! 다 같이 점심시간에 축하해주자.",
+    "should_censored": false,
+    "reason": "학우의 생일을 축하하는 친화적 게시글"
+  },
+  {
+    "category": "sniping",
+    "content": "서연이랑 같이 도서관 가기로 했는데 서연이 어디 있는지 아는 사람?",
+    "should_censored": false,
+    "reason": "약속된 동행을 위한 단순 행방 확인"
+  },
+  {
+    "category": "sniping",
+    "content": "우리 분단 발표 자료 다 만들었는데 수정할 부분 있는지 봐줘.",
+    "should_censored": false,
+    "reason": "모둠 협업을 위한 피드백 요청"
+  },
+  {
+    "category": "sniping",
+    "content": "어제 방과 후 수업 들었던 친구들 필기 내용 공유 가능할까?",
+    "should_censored": false,
+    "reason": "학습 지원을 위한 일상적 자료 요청"
+  },
+  {
+    "category": "sniping",
+    "content": "잃어버린 체육복 바지 찾았어요! 보관해준 친구 고마워.",
+    "should_censored": false,
+    "reason": "분실물 습득 및 회수에 대한 감사 표현"
+  },
+  {
+    "category": "sniping",
+    "content": "환경미화 구역 3분단 친구들 오늘 청소 열심히 하자!",
+    "should_censored": false,
+    "reason": "담당 구역 학우들을 향한 긍정적 격려"
+  },
+  {
+    "category": "conflict",
+    "content": "축구 못하는 3분단 애들은 이번 대회 빠져라, 민폐 끼치지 말고",
+    "should_censored": true,
+    "reason": "학급 구성원을 차별하고 배제하는 적대적 발언"
+  },
+  {
+    "category": "conflict",
+    "content": "남학생들만 청소 힘든 거 다 하고 여학생들은 노냐? 양심 터졌네",
+    "should_censored": true,
+    "reason": "성별 갈등을 조장하고 반 분위기를 와해시키는 공격적 발언"
+  },
+  {
+    "category": "conflict",
+    "content": "여학생들끼리만 간식 나눠먹는 거 보소, 진짜 치졸하다",
+    "should_censored": true,
+    "reason": "집단 간 편가르기를 조장하며 비난하는 표현"
+  },
+  {
+    "category": "conflict",
+    "content": "공부도 못하는 것들이 의견 내지 말고 조용히 따라와라",
+    "should_censored": true,
+    "reason": "성적을 기준으로 학우를 무시하고 발언권을 억압하는 태도"
+  },
+  {
+    "category": "conflict",
+    "content": "우리 모둠에서 1인분도 못할 거면 그냥 이름 빼버린다",
+    "should_censored": true,
+    "reason": "모둠원을 위협하고 배제를 일방적으로 통보하는 공격적 언사"
+  },
+  {
+    "category": "conflict",
+    "content": "지난번 합창대회 너희 분단 때문에 망친 거 다들 알지?",
+    "should_censored": true,
+    "reason": "결과의 책임을 특정 집단에 일방적으로 전가하는 분란 유발"
+  },
+  {
+    "category": "conflict",
+    "content": "걔랑 친하게 지내는 애들도 똑같은 수준이니까 상종하지 마",
+    "should_censored": true,
+    "reason": "특정 학생에 대한 집단 따돌림 및 관계적 고립 유도"
+  },
+  {
+    "category": "conflict",
+    "content": "왜 쟤 말만 듣고 내 말은 무시하냐? 다들 단체로 제정신 아니네",
+    "should_censored": true,
+    "reason": "학급 구성원 전체를 비하하며 적대감을 표출하는 언행"
+  },
+  {
+    "category": "conflict",
+    "content": "청소 구역 분담이 조금 불공평한 것 같은데 다시 회의해볼까?",
+    "should_censored": false,
+    "reason": "문제의식을 바탕으로 민주적 재협의를 제안하는 건전한 의견"
+  },
+  {
+    "category": "conflict",
+    "content": "축구 경기 출전 순서를 공평하게 정해서 모두 한 번씩 뛰게 하자.",
+    "should_censored": false,
+    "reason": "모든 학생의 참여를 유도하는 공평한 화합안 제시"
+  },
+  {
+    "category": "conflict",
+    "content": "모둠 활동 역할 분담 다시 확인하고 각자 맡은 부분 공유해요.",
+    "should_censored": false,
+    "reason": "원활한 과제 수행을 위한 체계적 소통"
+  },
+  {
+    "category": "conflict",
+    "content": "의견이 다를 때는 감정적으로 하지 말고 투표로 결정하는 게 좋겠어.",
+    "should_censored": false,
+    "reason": "갈등을 평화적으로 조율하려는 성숙한 해결책 제안"
+  },
+  {
+    "category": "conflict",
+    "content": "합창대회 파트 연습할 때 서로 조금씩 배려하면서 맞춰보자.",
+    "should_censored": false,
+    "reason": "공동 목표를 위한 협력과 배려 독려"
+  },
+  {
+    "category": "conflict",
+    "content": "각자 준비해 온 간식 함께 나눠먹으면서 쉬는 시간 보내자!",
+    "should_censored": false,
+    "reason": "친목 도모와 화기애애한 분위기를 만드는 제안"
+  },
+  {
+    "category": "conflict",
+    "content": "이번 체육대회 종목 정할 때 모든 학생의 선호도를 조사해보면 어떨까?",
+    "should_censored": false,
+    "reason": "다양한 의견을 고루 수렴하려는 민주적 태도"
+  },
+  {
+    "category": "conflict",
+    "content": "서로 오해가 있었던 것 같은데 솔직하게 대화로 풀어보자.",
+    "should_censored": false,
+    "reason": "오해를 해소하고 관계를 개선하려는 건전한 대화 시도"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "어제 토토 사이트에서 5만원 배팅했는데 대박 터짐 링크 줄까?",
+    "should_censored": true,
+    "reason": "청소년 불법 스포츠 도박 경험 공유 및 사이트 홍보"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "전자담배 새로 나온 맛 진짜 달달함 쉬는 시간에 옥상 갈 사람",
+    "should_censored": true,
+    "reason": "미성년자 유해 약물(담배) 권유 및 흡연 조장"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "오늘 야자 째고 노래방 가서 맥주 한 캔 까실 분 구함",
+    "should_censored": true,
+    "reason": "미성년자 음주 권유 및 일탈 모의"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "선생님 컴퓨터 비번 알아냈는데 시험지 유출해볼래?",
+    "should_censored": true,
+    "reason": "학사 부정행위 모의 및 형사상 범죄 유도"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "바카라 미니게임 꽁돈 주는 사이트 가입할 사람 갠톡 ㄱㄱ",
+    "should_censored": true,
+    "reason": "불법 온라인 도박 가입 권유"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "신분증 위조해서 주말에 클럽 뚫는 법 공유한다",
+    "should_censored": true,
+    "reason": "공문서위조 등 중대한 불법 행위 공유"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "요즘 텔레그램에서 유출 영상 공유방 링크 도는데 좌표 쏜다",
+    "should_censored": true,
+    "reason": "불법 촬영물 및 청소년 유해 매체 유포 시도"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "인터넷에서 성인 사이트 우회 접속하는 쉬운 VPN 알려줌",
+    "should_censored": true,
+    "reason": "청소년 유해 매체 차단망 우회 방법 안내"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "정보 시간에 배운 네트워크 보안과 암호화 기술 정말 유익했어.",
+    "should_censored": false,
+    "reason": "정규 교과목 학습 내용에 대한 건전한 소감"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "보건 시간에 배운 청소년기 흡연과 음주의 위험성에 대해 토론해보자.",
+    "should_censored": false,
+    "reason": "약물 오남용 예방 교육 관련 학술 토론 제안"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "보드게임 동아리에서 이번 주말에 할 건전한 보드게임 추천받아요.",
+    "should_censored": false,
+    "reason": "건전한 여가 활동 추천 요청"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "학교 정보 보안 수칙을 지키기 위해 공용 PC 비밀번호는 주기적으로 바꾸자.",
+    "should_censored": false,
+    "reason": "학교 정보 보안 규정 준수 독려"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "청소년 유해 매체물 차단 프로그램 설치하는 방법 공지할게요.",
+    "should_censored": false,
+    "reason": "유해 환경 차단을 위한 안전 정보 제공"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "도덕 수행평가 주제로 청소년 도박 중독의 문제점에 대해 조사 중이야.",
+    "should_censored": false,
+    "reason": "교과 수행평가를 위한 공익적 학술 탐구"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "쉬는 시간에 매점 가서 맛있는 이온 음료 사 마실 사람?",
+    "should_censored": false,
+    "reason": "학교 매점 이용과 관련된 건전한 일상 대화"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "우리 반 건강 걷기 챌린지 이번 주부터 다 같이 시작해봐요!",
+    "should_censored": false,
+    "reason": "체력 증진을 위한 긍정적 학급 활동"
+  },
+  {
+    "category": "political",
+    "content": "윤어게인 외치며 나라 망치는 것들 진짜 답도 없다",
+    "should_censored": true,
+    "reason": "정치적 구호 사용 및 특정 정치 성향에 대한 비난"
+  },
+  {
+    "category": "political",
+    "content": "이재명 구속 안 되고 뭐하냐 진짜 어이없네",
+    "should_censored": true,
+    "reason": "정치인 실명 언급 및 사법 관련 정치적 비난"
+  },
+  {
+    "category": "political",
+    "content": "노무현",
+    "should_censored": true,
+    "reason": "학급 게시판 내 단순 정치인 이름 언급 규정 위반"
+  },
+  {
+    "category": "political",
+    "content": "문재인 정부 시절 정책 때문에 나라 꼴 이렇게 됨",
+    "should_censored": true,
+    "reason": "전직 대통령 실명 언급 및 정치적 비방"
+  },
+  {
+    "category": "political",
+    "content": "한동훈 정책 찬성하는 애들은 생각이 있는 거냐?",
+    "should_censored": true,
+    "reason": "정치인 언급 및 특정 의견 지지자에 대한 모욕"
+  },
+  {
+    "category": "political",
+    "content": "선거철 되니까 국회의원 놈들 다 쇼하고 자빠졌네",
+    "should_censored": true,
+    "reason": "정치인 혐오 및 비속 표현 포함"
+  },
+  {
+    "category": "political",
+    "content": "김대중, 노무현 사진 가지고 조롱하는 합성 짤 올림",
+    "should_censored": true,
+    "reason": "정치인 실명 언급 및 부적절한 밈을 통한 희화화 시도"
+  },
+  {
+    "category": "political",
+    "content": "다음 대통령은 무조건 보수당 찍어야 나라가 산다",
+    "should_censored": true,
+    "reason": "특정 정당에 대한 노골적인 선거 선동 및 편향 발언"
+  },
+  {
+    "category": "political",
+    "content": "사회 시간에 배운 삼권분립과 국회의 역할에 대해 질문이 있어.",
+    "should_censored": false,
+    "reason": "정규 사회 교과 정치 제도 관련 건전한 학업 질문"
+  },
+  {
+    "category": "political",
+    "content": "우리 학급 자치회 규칙 제정을 위한 민주적 투표를 진행하겠습니다.",
+    "should_censored": false,
+    "reason": "학급 자치 및 민주적 절차에 대한 정상 공지"
+  },
+  {
+    "category": "political",
+    "content": "헌법 제1조 2항의 주권재민 원칙에 대한 발표 자료를 준비했어.",
+    "should_censored": false,
+    "reason": "헌법 및 시민 교육 관련 발표 내용 공유"
+  },
+  {
+    "category": "political",
+    "content": "역사 시간에 배운 고대 그리스 아테네의 직접 민주주의 특징 정리본이야.",
+    "should_censored": false,
+    "reason": "역사적 민주주의 제도에 관한 학업 필기 공유"
+  },
+  {
+    "category": "political",
+    "content": "청소년 참여 위원회 정책 제안 공모전 참가할 팀원 모집합니다.",
+    "should_censored": false,
+    "reason": "지자체 청소년 자치 활동 공모전 참여 모집"
+  },
+  {
+    "category": "political",
+    "content": "학생회장 선거 공약집 꼼꼼히 읽어보고 올바른 한 표 행사하자.",
+    "should_censored": false,
+    "reason": "교내 학생 자치 선거에 대한 건전한 참여 독려"
+  },
+  {
+    "category": "political",
+    "content": "사회 교과서 현대사 단원 예습하는데 질문 있는 친구?",
+    "should_censored": false,
+    "reason": "교과서 단원 기반 정상적 학습 대화"
+  },
+  {
+    "category": "political",
+    "content": "모의 UN 총회 동아리에서 기후변화 대응 협약서 작성 회의를 엽니다.",
+    "should_censored": false,
+    "reason": "국제 정치 및 외교 모의 동아리 활동 안내"
+  },
+  {
+    "category": "long_text",
+    "content": "솔직히 지난주에 우리 반 어떤 애가 청소 시간마다 슬그머니 빠져나가는 거 나만 본 거 아니잖아? 매번 다른 애들이 대신 쓰레기통 비우고 빗자루질하느라 고생하는데, 그렇게 이기적으로 살면 사회 나가서 뭐가 될지 참 궁금하다. 양심이 있으면 알아서 내일부터는 청소 제대로 해라.",
+    "should_censored": true,
+    "reason": "특정인을 암시하며 인격을 모욕하고 공격적인 어조로 학급 내 위화감을 조성함"
+  },
+  {
+    "category": "long_text",
+    "content": "요즘 애들 축구할 때 패스도 안 하고 혼자 드리블하다가 뺏기면 남 탓만 오지게 하더라. 축구 룰도 제대로 모르면서 경기 망치는 애들은 솔직히 다음 시합부터 라인업에서 빼는 게 맞지 않냐? 괜히 반 전체 분위기 흐리지 말고 빠질 사람은 알아서 빠져라.",
+    "should_censored": true,
+    "reason": "스포츠 활동을 빌미로 특정 구성원들을 공개 배제하고 적대적인 분위기를 유발함"
+  },
+  {
+    "category": "long_text",
+    "content": "어제 야간 자율학습 끝나고 집 가는 길에 골목길에서 우리 반 누구누구가 담배 피우는 듯한 모습을 봤는데 긴가민가하네. 만약 내가 잘못 본 거라면 미안한데 혹시라도 맞다면 진짜 학교 망신이니까 조심해라. 다음엔 이름까지 다 밝힐 거니까.",
+    "should_censored": true,
+    "reason": "확인되지 않은 일탈 소문을 공론화하며 사생활 폭로 협박성 표현을 사용함"
+  },
+  {
+    "category": "long_text",
+    "content": "오늘 학급 회의 때 특정 정당 정책이 맞네 틀리네 하면서 끝까지 우기던 애 진짜 피곤하더라. 학교 게시판에서 그런 정치인 이름 언급하면서 지지하는 발언 계속하는 것도 솔직히 선 넘은 것 같은데, 앞으로 그런 얘기는 혼자 속으로만 생각했으면 좋겠다.",
+    "should_censored": true,
+    "reason": "특정 학우를 우회적으로 저격하고 정치적 갈등과 상호 비난을 촉발함"
+  },
+  {
+    "category": "long_text",
+    "content": "조별 과제하는데 자료 조사 전혀 안 해오고 카톡 읽씹하는 모 조원분, 내일까지 제출 안 하면 교수님이나 선생님께 보고하고 보고서 명단에서 가차 없이 지우겠습니다. 묻어가려는 버릇 고치시길 바라고 사회성 좀 기르세요.",
+    "should_censored": true,
+    "reason": "공개 게시판을 통해 인신공격성 표현(사회성 결여 등)을 쓰며 망신을 줌"
+  },
+  {
+    "category": "long_text",
+    "content": "인터넷 사이트 중에 미성년자도 가입해서 용돈 쉽게 불릴 수 있다는 투자 플랫폼 공유받았는데 진짜 돈 들어오네. 합법인지 불법인지는 모르겠는데 소액으로 쏠쏠하게 버는 법 궁금하면 쉬는 시간에 조용히 찾아와라.",
+    "should_censored": true,
+    "reason": "불법 도박 또는 청소년 유해 사기성 재테크를 유인하는 모호한 홍보글임"
+  },
+  {
+    "category": "long_text",
+    "content": "체육 수행평가 기준이 너무 이상하고 선생님이 특정 학생들한테만 후하게 점수 주는 것 같다는 소문 돌던데 실화냐? 이런 식이면 열심히 연습한 우리만 바보 되는 거 아닌가 싶고 진짜 정떨어지네. 다 같이 항의라도 해야 하는 거 아님?",
+    "should_censored": true,
+    "reason": "근거 없는 소문을 퍼뜨리며 교사에 대한 불신과 집단 반발을 선동함"
+  },
+  {
+    "category": "long_text",
+    "content": "아니 게시판에 글 쓸 때 맞춤법 다 틀리고 이상한 드립 치면서 뇌절하는 애들 진심으로 꼴 보기 싫다. 초등학교도 제대로 안 나왔나 싶을 정도로 심각한데 제발 글 쓰기 전에 생각 좀 하고 올리면 안 되나? 눈살 찌푸려짐.",
+    "should_censored": true,
+    "reason": "게시판 이용 학우들의 지적 능력을 비하하며 모욕적인 비난을 가함"
+  },
+  {
+    "category": "long_text",
+    "content": "이번 모둠 과제 발표 준비하면서 서로 의견 차이가 조금 있어서 감정이 상했던 부분이 있었던 것 같아. 하지만 각자 맡은 역할을 성실하게 끝내려고 노력한 점은 분명하니, 남은 시간 동안 서로 오해를 풀고 좋은 결과물을 낼 수 있도록 다 함께 힘을 모았으면 좋겠어.",
+    "should_censored": false,
+    "reason": "과정에서의 갈등을 솔직히 인정하고 화합과 성공적 완수를 이끄는 긍정적 글"
+  },
+  {
+    "category": "long_text",
+    "content": "체육대회 준비를 위해 점심시간마다 모여서 연습하느라 다들 지치고 피곤할 텐데, 끝까지 포기하지 않고 함께 뛰어줘서 정말 고마워. 이번 주 금요일 경기 전까지 컨디션 관리 잘하고, 이기는 것보다 다치지 않고 다 같이 즐거운 추억 만드는 것을 최우선으로 하자.",
+    "should_censored": false,
+    "reason": "결과보다 안전과 협동의 가치를 강조하는 성숙한 학급 격려문"
+  },
+  {
+    "category": "long_text",
+    "content": "사회 시간에 청소년 모의 선거 및 정치 참여 과정에 대해 토론하면서 다양한 시각이 존재한다는 것을 배웠어. 각자 중요하게 생각하는 가치관이 다를 수 있음을 인정하고, 감정적인 비난 대신 논리적인 근거를 들어 서로의 생각을 존중하며 대화하는 태도가 필요하다고 느껴.",
+    "should_censored": false,
+    "reason": "정치와 토론을 주제로 다루었으나 성숙한 시민 의식과 상호 존중을 역설함"
+  },
+  {
+    "category": "long_text",
+    "content": "학급 환경미화나 분리수거 당번 활동이 특정 학생들에게만 치우치지 않도록, 다음 학급 회의 때 청소 체크리스트를 정비하고 순번을 명확하게 공지하는 방안을 건의하려고 해. 혹시 더 좋은 아이디어나 보완할 점이 있다면 댓글로 자유롭게 의견 남겨줘.",
+    "should_censored": false,
+    "reason": "불균형 문제를 비난 대신 공식 제도 정비와 학우들의 의견 수렴으로 해결하려 함"
+  },
+  {
+    "category": "long_text",
+    "content": "최근 인터넷이나 SNS에서 유행하는 청소년 대상 불법 온라인 게임과 사기 범죄 사례가 심각하다고 뉴스에 나오더라. 우리 반 친구들도 호기심에라도 검증되지 않은 링크나 사이트에 접속하지 않도록 주의하고, 개인정보 관리에 각별히 신경 쓰면 좋겠어.",
+    "should_censored": false,
+    "reason": "유해 주제를 언급하고 있으나 피해 예방 및 학우 보호를 목적으로 한 공익적 권고"
+  },
+  {
+    "category": "long_text",
+    "content": "방과 후 자율학습실 이용 시 소음 때문에 집중하기 어렵다는 의견이 있어서 조심스럽게 글 남겨. 쉬는 시간이나 이동할 때 조금만 발소리를 낮추고 대화는 복도에서 나누는 배려를 실천하면 모두가 더 쾌적하게 공부할 수 있을 것 같아. 다들 협조 부탁해.",
+    "should_censored": false,
+    "reason": "학습 환경 개선을 위해 정중한 어조로 학우들의 배려와 협조를 구함"
+  },
+  {
+    "category": "long_text",
+    "content": "역사 시간에 근현대사 주요 사건들을 공부하면서 민주주의 발전 과정에서 나타난 갈등과 통합의 역사를 되돌아보게 되었어. 과거의 여러 역사적 사건들을 단순히 옳고 그름으로 나누기보다는 당시의 시대적 맥락 속에서 객관적으로 이해하려는 노력이 중요한 것 같아.",
+    "should_censored": false,
+    "reason": "역사적 갈등을 객관적·학문적 시각에서 통찰한 모범적 학습 소감"
+  },
+  {
+    "category": "long_text",
+    "content": "지난번 체육 시간에 축구 시합 중에 몸싸움이 다소 격해져서 서로 얼굴을 붉히는 일이 있었는데, 다들 승부욕이 앞서서 그랬던 것 같아. 경기 끝나고 서로 사과하고 좋게 마무리되었으니 앞으로는 다치지 않는 안전한 스포츠맨십을 보여주자.",
+    "should_censored": false,
+    "reason": "과거의 마찰을 건강하게 수습하고 페어플레이 정신을 다짐하는 건전한 글"
+  },
+  {
+    "category": "other",
+    "content": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+    "should_censored": true,
+    "reason": "동일 자음의 과도한 반복으로 화면을 어지럽히는 무의미한 도배"
+  },
+  {
+    "category": "other",
+    "content": "⚠️️⚠️⚠️⚠️⚠️ 긴급 공지 필독 ⚠️⚠️⚠️⚠️⚠️ 절대 누르지 마세요 ⚠️⚠️⚠️⚠️⚠️",
+    "should_censored": true,
+    "reason": "특수 기호 남발을 통한 게시판 시각적 피로 유발 및 허위 어그로성 도배"
+  },
+  {
+    "category": "other",
+    "content": "https://bit.ly/3xXk9Za 최신 무료 영화 다시보기 사이트 바로가기 클릭",
+    "should_censored": true,
+    "reason": "불법 스트리밍 및 바이러스 유포 의심 단축 URL 포함 스팸"
+  },
+  {
+    "category": "other",
+    "content": "롤 대리 랭크 올려드립니다 골드에서 다이아까지 갠톡 문의: openkakao.me/xxx",
+    "should_censored": true,
+    "reason": "게임 대리 육성 등 상업적 영리 목적의 스팸 광고"
+  },
+  {
+    "category": "other",
+    "content": "안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕안녕",
+    "should_censored": true,
+    "reason": "의미 없는 단어의 단순 반복을 통한 도배 행위"
+  },
+  {
+    "category": "other",
+    "content": "공부 잘하는 비법 알려줌 -> https://spam-link.xyz/virus 여기로 드루와",
+    "should_censored": true,
+    "reason": "피싱 및 악성코드 유포 의심 외부 링크 공유"
+  },
+  {
+    "category": "other",
+    "content": "....................................................................",
+    "should_censored": true,
+    "reason": "무의미한 문장부호만을 나열하여 시스템 자원을 낭비하는 무내용 도배"
+  },
+  {
+    "category": "other",
+    "content": "문상 5천원 공짜로 받는 법! 앱 다운받고 추천인 코드 1234 입력하세요",
+    "should_censored": true,
+    "reason": "개인 이익을 목적으로 한 상업적 추천인 코드 유포 스팸"
+  },
+  {
+    "category": "other",
+    "content": "수학 숙제 정답 확인용 EBS 공식 강의 링크입니다: https://ebsi.co.kr",
+    "should_censored": false,
+    "reason": "검증된 공식 교육 공공기관의 학습용 정상 링크"
+  },
+  {
+    "category": "other",
+    "content": "선생님께서 올려주신 수행평가 안내 양식 한글 파일 첨부했습니다.",
+    "should_censored": false,
+    "reason": "학업 목적의 정상적인 학습 보조 자료 공유"
+  },
+  {
+    "category": "other",
+    "content": "과학 탐구 보고서 작성 가이드라인 PDF 확인하고 기한 내 제출해주세요.",
+    "should_censored": false,
+    "reason": "학사 일정 및 과제 완수를 위한 정보성 글"
+  },
+  {
+    "category": "other",
+    "content": "학급 문고에 읽고 싶은 도서 목록 신청받으니 댓글로 제목 써주세요.",
+    "should_censored": false,
+    "reason": "학급 독서 환경 조성을 위한 건전한 소통"
+  },
+  {
+    "category": "other",
+    "content": "내일 시간표 변경: 1교시 영어 -> 체육, 운동복 챙겨오세요!",
+    "should_censored": false,
+    "reason": "수업 준비에 필수적인 학급 공식 공지"
+  },
+  {
+    "category": "other",
+    "content": "미술 준비물로 4B 연필과 지우개 잊지 말고 꼭 챙겨오세요~",
+    "should_censored": false,
+    "reason": "교과 활동 준비물 안내를 위한 유익한 알림"
+  },
+  {
+    "category": "other",
+    "content": "학교 홈페이지에 이번 달 급식 식단표 공지사항 올라왔으니 참고하세요.",
+    "should_censored": false,
+    "reason": "학교 공식 홈페이지 정보에 대한 건전한 안내"
+  },
+  {
+    "category": "other",
+    "content": "지난 현장체험학습 때 찍은 단체 사진 드라이브에 올려두었습니다.",
+    "should_censored": false,
+    "reason": "학급 공식 행사 기록 및 사진 공유"
+  },
+  {
+    "category": "slang",
+    "content": "너 진짜 ㅂ.ㅅ이냐? 준비물 안 가져온 게 한두 번도 아닌데 또 남한테 빌려 쓰네.",
+    "should_censored": true,
+    "reason": "초성·문장부호로 우회한 인격 모욕성 욕설을 특정인에게 사용함"
+  },
+  {
+    "category": "slang",
+    "content": "수행평가 망했다고 친구한테 'ㄱㅅㄲ'라고 보내고 단체방에서도 계속 놀렸어.",
+    "should_censored": true,
+    "reason": "초성으로 변형한 욕설을 실제 친구를 모욕하는 데 사용함"
+  },
+  {
+    "category": "slang",
+    "content": "이번 과학 실험 결과 진짜 미쳤다! 예상보다 색이 선명하게 나와서 보고서 쓰는 재미가 있네.",
+    "should_censored": false,
+    "reason": "대상을 모욕하지 않고 놀라움과 긍정적인 감탄을 구어체로 표현함"
+  },
+  {
+    "category": "slang",
+    "content": "국어 시간에 욕설이 대화 분위기에 미치는 영향을 조사하고 있어요. 실제 욕을 쓰기보다는 초성이나 완곡한 예시로 설명하려고 합니다.",
+    "should_censored": false,
+    "reason": "욕설 주제를 학습 목적으로 설명하며 실제 비하나 욕설 사용을 피함"
+  },
+  {
+    "category": "sniping",
+    "content": "오늘 급식 줄 맨 끝에 서 있던 키 큰 안경 쓴 애가 반찬을 몰래 더 가져가더라. 누군지 아는 사람은 댓글로 이름 적어줘.",
+    "should_censored": true,
+    "reason": "외모와 상황으로 학우를 유추하게 하고 확인되지 않은 행동을 공개적으로 지목하도록 유도함"
+  },
+  {
+    "category": "sniping",
+    "content": "민지 학생증 앞뒤 사진을 찍어 단체방에 올렸어. 이름이랑 학번도 잘 보이니까 잃어버린 사람 찾기 쉽겠지?",
+    "should_censored": true,
+    "reason": "분실물 확인을 빌미로 동의 없이 개인 식별 정보를 공개함"
+  },
+  {
+    "category": "sniping",
+    "content": "복도에서 학생증을 주웠는데 개인정보가 보여서 사진은 올리지 않고 교무실에 맡겨뒀어요. 주인에게 전달해 주실 수 있나요?",
+    "should_censored": false,
+    "reason": "개인정보를 게시하지 않고 분실물을 공식 담당자에게 전달함"
+  },
+  {
+    "category": "sniping",
+    "content": "지우야, 아까 같이 도서관에서 만나기로 한 거 맞지? 도착하면 네가 괜찮을 때 메시지 줘. 위치를 공개 게시판에 올리지는 않을게.",
+    "should_censored": false,
+    "reason": "당사자와 약속을 확인하며 위치 공개를 피하는 사적인 연락임"
+  },
+  {
+    "category": "conflict",
+    "content": "역할을 못 해내는 친구가 누군지는 다 알지? 이번 발표에서는 괜히 이름만 올려 점수 받지 못하게 우리끼리 조용히 빼자.",
+    "should_censored": true,
+    "reason": "특정 조원을 암시해 모둠에서 배제하고 부당한 불이익을 주도록 조장함"
+  },
+  {
+    "category": "conflict",
+    "content": "체육대회 종목을 정할 때 달리기 못하는 애들은 빠지는 게 모두에게 편하지 않을까? 괜히 분위기 망치지 말고 알아서 양보하자.",
+    "should_censored": true,
+    "reason": "능력을 이유로 일부 학우를 배제하고 참여 포기를 압박함"
+  },
+  {
+    "category": "conflict",
+    "content": "자료 조사 분량이 사람마다 달라 보여서 조금 불공평하다고 느꼈어. 누가 잘못했다고 정하기 전에 역할과 남은 일을 같이 확인하고 다시 나눠보자.",
+    "should_censored": false,
+    "reason": "불공정 문제를 제기하지만 개인을 비난하지 않고 협의로 해결하려 함"
+  },
+  {
+    "category": "conflict",
+    "content": "나는 이번에 축구보다 피구를 했으면 좋겠어. 다른 친구들 생각도 듣고, 의견이 다르면 투표로 정해서 정해진 결과에 다 같이 따르자.",
+    "should_censored": false,
+    "reason": "반대 의견을 평화적으로 표현하고 민주적인 결정 절차를 제안함"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "학교 와이파이에서 막힌 도박 사이트도 접속되는 주소를 찾았어. 가입할 때 나이 확인 피하는 방법까지 알려줄 테니 같이 해볼 사람은 개인 메시지 줘.",
+    "should_censored": true,
+    "reason": "청소년의 도박 사이트 접근과 연령 확인 회피를 구체적으로 권유함"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "시험 기간에 선생님 계정으로 공유 폴더 들어가는 방법을 알아냈어. 아직 공개 안 된 답안 파일도 있을 것 같은데 같이 확인해볼래?",
+    "should_censored": true,
+    "reason": "타인 계정에 무단 접근해 시험 자료를 확인하려는 행위를 권유함"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "친구가 온라인 도박 링크를 보내도 가입하거나 돈을 넣지 마세요. 화면을 저장해 학교 상담 선생님이나 보호자에게 알리고 사이트를 신고하는 게 좋습니다.",
+    "should_censored": false,
+    "reason": "도박을 권유하지 않고 피해 예방과 신고 방법을 안내함"
+  },
+  {
+    "category": "unsafe_topic",
+    "content": "정보 수업에서 계정 보안과 피싱 예방을 배웠어요. 비밀번호를 공유하지 않고 의심스러운 첨부 파일은 열지 않는 습관을 함께 지켜요.",
+    "should_censored": false,
+    "reason": "불법 행위가 아닌 보안 교육과 피해 예방을 안내함"
+  },
+  {
+    "category": "political",
+    "content": "사회 발표 자료에 김대중 전 대통령의 연설 일부를 인용했어. 발표 전에 출처와 당시 시대적 배경을 확인해보려고 해.",
+    "should_censored": true,
+    "reason": "정치인 이름이 단순한 학습·인용 맥락으로 언급되었으나 현 기준상 이름 언급도 검열 대상임"
+  },
+  {
+    "category": "political",
+    "content": "역사 과제에서 박근혜 정부 시기의 정책을 조사하는 조가 있대. 관련 자료는 교과서와 공공 기록을 중심으로 찾아보자.",
+    "should_censored": true,
+    "reason": "정치인 이름을 비방 없이 학업 맥락에서 언급했으나 현 기준상 정치인 이름 언급은 검열 대상임"
+  },
+  {
+    "category": "political",
+    "content": "학급 자치회 후보들이 낸 공약을 읽어보고, 우리 반에 필요한 내용을 기준으로 각자 판단해 투표하면 좋겠어.",
+    "should_censored": false,
+    "reason": "특정 정당이나 정치인을 언급하지 않고 교내 자치 선거 참여를 안내함"
+  },
+  {
+    "category": "political",
+    "content": "사회 수업에서 선거 제도와 비례대표의 역할을 배우고 있어. 정당별 입장을 단정하기보다 제도 자체가 어떻게 운영되는지 자료를 찾아보자.",
+    "should_censored": false,
+    "reason": "특정 정치인·정파를 선전하거나 비난하지 않는 중립적인 시민 교육 내용임"
+  },
+  {
+    "category": "long_text",
+    "content": "조별 과제에서 자료를 거의 내지 않은 사람이 누구인지는 다들 알고 있을 거야. 직접 이름을 쓰지는 않겠지만 발표 때 그 친구 몫까지 대신 설명하지는 말자. 그래야 본인도 창피한 줄 알고 다음부터 정신 차리지 않겠어?",
+    "should_censored": true,
+    "reason": "이름을 감춘 채 특정 조원을 알아볼 수 있게 저격하고 공개적으로 망신 주도록 유도함"
+  },
+  {
+    "category": "long_text",
+    "content": "이번 수행평가 점수가 친한 학생들에게만 후하게 나왔다는 말을 여러 명에게 들었어. 아직 확인된 건 아니지만 다들 선생님이 누군지 짐작할 테니, 게시판에 경험담을 모아 공개적으로 따져 묻고 다 같이 항의하자.",
+    "should_censored": true,
+    "reason": "확인되지 않은 편파 평가 주장을 확산하고 특정 교사를 유추하게 하며 공개 압박을 조직함"
+  },
+  {
+    "category": "long_text",
+    "content": "이번 체육 수행평가에서 공지된 기준과 다른 점수가 나온 것 같다는 의견이 있어요. 아직 사실 여부는 모르니 특정 선생님이나 학생의 이름을 언급하지 말고, 평가표와 안내문을 대조해 봅시다. 차이가 확인되면 대표가 담당 선생님께 정중히 문의하고, 답변을 들은 뒤 필요한 경우 공식 절차로 재검토를 요청하면 좋겠습니다.",
+    "should_censored": false,
+    "reason": "미확인 의혹을 사실처럼 퍼뜨리거나 개인을 공격하지 않고 근거 확인과 공식적인 해결 절차를 제안함"
+  },
+  {
+    "category": "long_text",
+    "content": "친구가 돈을 쉽게 벌 수 있다며 낯선 게임 사이트 링크를 보내왔어. 도박인지 확실하지 않더라도 가입하거나 개인정보를 입력하지 말고, 화면을 보호자와 선생님께 보여주자. 비슷한 메시지를 받은 사람도 링크를 퍼뜨리지 말고 함께 신고해 피해를 막았으면 해.",
+    "should_censored": false,
+    "reason": "도박 가능성이 있는 링크를 홍보하지 않고 개인정보 보호와 신고를 권하는 예방 안내임"
+  },
+  {
+    "category": "other",
+    "content": "수행평가 자료 공유라고 적혀 있지만 주소가 공식 학교 사이트와 다르고, 접속 후 추천인 코드를 입력하라고 합니다. 무료 포인트를 준다는 문구와 함께 같은 링크를 여러 번 올려 가입을 유도하고 있어요.",
+    "should_censored": true,
+    "reason": "학습 자료를 가장해 외부 서비스 가입을 유도하는 반복성 링크 스팸임"
+  },
+  {
+    "category": "other",
+    "content": "오늘부터 게시판에 매시간 '급식 메뉴 궁금하면 여기 클릭'이라는 글을 계속 올릴게요. 같은 링크를 눌러야만 정답을 볼 수 있다고 써두면 방문자가 늘 테니 다들 많이 퍼가 주세요.",
+    "should_censored": true,
+    "reason": "동일한 홍보 글과 링크를 반복 게시해 게시판 노출을 부당하게 늘리려는 스팸임"
+  },
+  {
+    "category": "other",
+    "content": "ㅋㅋ 오늘 체육 시간 마지막 골 진짜 아슬아슬했어ㅋㅋ 다음 경기 전에 규칙도 다시 확인하고, 끝나고 같이 급식 먹으러 가자!",
+    "should_censored": false,
+    "reason": "일상적인 웃음 표현과 정상적인 대화로 과도한 반복 도배가 아님"
+  },
+  {
+    "category": "other",
+    "content": "학교 도서관에서 안내한 전자책 이용 주소와 로그인 방법을 공유합니다. 학교 계정으로 접속하면 무료로 볼 수 있고, 접속이 안 되면 도서관에 문의해 주세요.",
+    "should_censored": false,
+    "reason": "학교 도서관의 학습용 공식 서비스 이용 정보를 안내하는 정상 게시물임"
+  }
+]
