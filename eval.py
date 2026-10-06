@@ -76,7 +76,7 @@ def main():
 
   results = {}
   for example in tqdm(dataset, desc="Evaluating examples"):
-    prompt = prompt_template.replace("{title}", "").replace("{content}", example["content"])
+    prompt = prompt_template.replace("{title}", "안녕").replace("{content}", example["content"])
 
     request_body = payload_mapper.get_request_body(args.model_name, prompt)
     response = requests.post(args.endpoint, json=request_body, headers={"Content-Type": "application/json"})
