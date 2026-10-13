@@ -7,7 +7,7 @@
 | **실제 양성 (Positive)** | TP (True Positive) | FN (False Negative) |
 | **실제 음성 (Negative)** | FP (False Positive) | TN (True Negative) |
 
-여기서 **Positive/Negative는 모델이 내린 예측(어느 클래스로 분류했는가)**을, **True/False는 그 예측이 정답과 일치했는가(맞았는가, 틀렸는가)**를 뜻한다. 예를 들어 FN은 "음성이라고 예측했는데(Negative), 그 예측이 틀렸다(False)"는 뜻이므로 실제로는 양성이다.
+여기서 **Positive/Negative는 모델이 내린 예측**(어느 클래스로 분류했는가)을, **True/False는 그 예측이 정답과 일치했는가**(맞았는가, 틀렸는가)를 뜻한다. 예를 들어 FN은 "음성이라고 예측했는데(Negative), 그 예측이 틀렸다(False)"는 뜻이므로 실제로는 양성이다.
 
 | 용어 | 한국어 명칭 | 풀이 | 예시(게시글 비속어 필터링) |
 | ------ | ------ | ------ | ------ |
