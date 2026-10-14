@@ -1,0 +1,84 @@
+{
+  "all": {
+    "true_positive": 29,
+    "true_negative": 34,
+    "false_positive": 1,
+    "false_negative": 6,
+    "accuracy": 0.9,
+    "precision": 0.9666666666666667,
+    "recall": 0.8285714285714286,
+    "f1_score": 0.8923076923076922
+  },
+  "slang": {
+    "true_positive": 4,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1_score": 0.888888888888889
+  },
+  "sniping": {
+    "true_positive": 3,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 2,
+    "accuracy": 0.8,
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1_score": 0.7499999999999999
+  },
+  "conflict": {
+    "true_positive": 5,
+    "true_negative": 4,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1_score": 0.9090909090909091
+  },
+  "unsafe_topic": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "political": {
+    "true_positive": 4,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1_score": 0.888888888888889
+  },
+  "long_text": {
+    "true_positive": 4,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1_score": 0.888888888888889
+  },
+  "other": {
+    "true_positive": 4,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1_score": 0.888888888888889
+  },
+  "elapsed_seconds": 71.62996045796899,
+  "average_seconds_per_example": 1.023285149399557
+}
