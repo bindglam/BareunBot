@@ -1,0 +1,84 @@
+{
+  "all": {
+    "true_positive": 34,
+    "true_negative": 33,
+    "false_positive": 2,
+    "false_negative": 1,
+    "accuracy": 0.9571428571428572,
+    "precision": 0.9444444444444444,
+    "recall": 0.9714285714285714,
+    "f1_score": 0.9577464788732395
+  },
+  "slang": {
+    "true_positive": 5,
+    "true_negative": 4,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1_score": 0.9090909090909091
+  },
+  "sniping": {
+    "true_positive": 5,
+    "true_negative": 4,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1_score": 0.9090909090909091
+  },
+  "conflict": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "unsafe_topic": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "political": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "long_text": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "other": {
+    "true_positive": 4,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1_score": 0.888888888888889
+  },
+  "elapsed_seconds": 234.4144225420314,
+  "average_seconds_per_example": 3.3487774648861626
+}

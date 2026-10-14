@@ -1,5 +1,6 @@
 import argparse
 import json
+import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
@@ -82,6 +83,11 @@ class ConfusionMatrix:
   def get_recall(self) -> float:
     return safe_divide(self.true_positive, self.true_positive + self.false_negative)
 
+  def get_f1_score(self) -> float:
+    precision = self.get_precision()
+    recall = self.get_recall()
+    return 2 * safe_divide(precision * recall, precision + recall)
+
   def to_dict(self) -> dict:
     return {
       "true_positive": self.true_positive,
@@ -90,10 +96,11 @@ class ConfusionMatrix:
       "false_negative": self.false_negative,
       "accuracy": self.get_accuracy(),
       "precision": self.get_precision(),
-      "recall": self.get_recall()
+      "recall": self.get_recall(),
+      "f1_score": self.get_f1_score()
     }
 
-def safe_divide(numerator: int, denominator: int) -> float:
+def safe_divide(numerator: float, denominator: float) -> float:
   return numerator / denominator if denominator else 0.0
 
 def parse_args() -> argparse.Namespace:
@@ -127,12 +134,24 @@ def extract_json(text: str) -> dict:
 def predict(endpoint: str, model_name: str, payload_mapper: PayloadMapper, prompt: str) -> bool | None:
   """모델에게 검열 여부를 물어보고, 응답을 해석할 수 없으면 None을 반환한다."""
   request_body = payload_mapper.get_request_body(model_name, prompt)
-  response = requests.post(endpoint, json=request_body, headers={"Content-Type": "application/json"})
+  try:
+    response = requests.post(endpoint, json=request_body, headers={"Content-Type": "application/json"}, timeout=300)
+  except requests.RequestException as e:
+    print(f"Failed to send request to {endpoint}: {e}")
+    return None
   if response.status_code != 200:
-    print(f"Failed to get response from {endpoint}")
+    print(f"Failed to get response from {endpoint} ({response.status_code}): {response.text}")
     return None
 
-  response_content = payload_mapper.get_response_content(response.json())
+  try:
+    response_content = payload_mapper.get_response_content(response.json())
+  except (ValueError, KeyError, TypeError) as e:
+    print(f"Invalid response format: {e}: {response.text}")
+    return None
+  if not response_content:
+    print(f"Empty response content: {response.text}")
+    return None
+
   try:
     response_json = extract_json(response_content)
   except json.JSONDecodeError:
@@ -144,8 +163,10 @@ def predict(endpoint: str, model_name: str, payload_mapper: PayloadMapper, promp
     return None
   return response_json["should_censored"]
 
-def save_results(path: str, results: dict[str, ConfusionMatrix]):
+def save_results(path: str, results: dict, elapsed_seconds: float, example_count: int):
   results_json = {category: confusion_matrix.to_dict() for category, confusion_matrix in results.items()}
+  results_json["elapsed_seconds"] = elapsed_seconds
+  results_json["average_seconds_per_example"] = safe_divide(elapsed_seconds, example_count)
   with open(path, "w", encoding="utf-8") as f:
     json.dump(results_json, f, indent=2, ensure_ascii=False)
 
@@ -156,6 +177,7 @@ def main():
   prompt_template = load_prompt_template(args.prompt_path)
 
   results = { "all": ConfusionMatrix() }
+  start_time = time.perf_counter()
   for example in tqdm(dataset, desc="Evaluating examples"):
     prompt = build_prompt(prompt_template, example)
     predicted = predict(args.endpoint, args.model_name, payload_mapper, prompt)
@@ -166,7 +188,9 @@ def main():
     results.setdefault(example["category"], ConfusionMatrix()).add(predicted, actual)
     results["all"].add(predicted, actual)
 
-  save_results(args.result_path, results)
+  elapsed_seconds = time.perf_counter() - start_time
+
+  save_results(args.result_path, results, elapsed_seconds, len(dataset))
 
 if __name__ == "__main__":
   main()
