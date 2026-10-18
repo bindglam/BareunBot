@@ -1,55 +1,28 @@
 import argparse
 import json
 import time
-from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
 
-import requests
 from tqdm import tqdm
 
-class PayloadMapper(ABC):
-  @abstractmethod
-  def get_request_body(self, model: str, prompt: str) -> dict:
-    pass
-
-  @abstractmethod
-  def get_response_content(self, response: dict) -> str:
-    pass
-
-class VLLMPayloadMapper(PayloadMapper):
-  def get_request_body(self, model: str, prompt: str) -> dict:
-    return {
-      "model": model,
-      "messages": [
-        {
-          "role": "user",
-          "content": prompt
-        }
-      ],
-      "max_tokens": 1024,
-      "stream": False,
-      "chat_template_kwargs": {
-        "enable_thinking": False
-      }
-    }
-
-  def get_response_content(self, response: dict) -> str:
-    choices = response.get("choices")
-    if not choices:
-      raise ValueError("Invalid response format: 'choices' field is missing or empty.")
-    return choices[0]["message"]["content"]
+from ai import AIClient
+from vllm import VLLMRequestPayload, VLLMResponsePayload, VLLMClient
+from jeff import JeffQuestion, JeffRequestPayload, NoulAnswer, JeffClient
 
 class EndpointType(Enum):
   vllm = "vllm"
   ollama = "ollama"
+  jeff = "jeff"
 
-  def get_payload_mapper(self) -> PayloadMapper:
+  def get_client(self, endpoint: str, api_key: str | None = None) -> AIClient:
     match self:
       case EndpointType.vllm:
-        return VLLMPayloadMapper()
+        return VLLMClient(endpoint, api_key=api_key)
       case EndpointType.ollama:
         raise NotImplementedError("Ollama endpoint is not implemented yet.")
+      case EndpointType.jeff:
+        return JeffClient(endpoint, api_key=api_key)
       case _:
         raise ValueError(f"Unknown endpoint type: {self.value}")
 
@@ -109,6 +82,7 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument("--endpoint_type", type=EndpointType, required=True, help="Type of the endpoint.", choices=list(EndpointType))
   parser.add_argument("--data_path", type=str, required=True, help="Path to the evaluation dataset.")
   parser.add_argument("--model_name", type=str, required=True, help="Name of the model to evaluate.")
+  parser.add_argument("--api_key", type=str, default=None, help="API key for the endpoint (optional).")
   parser.add_argument("--prompt_path", type=str, default="./eval_prompt.md", help="Path to the prompt file.")
   parser.add_argument("--result_path", type=str, default="./eval_results.json", help="Path to save the evaluation results.")
   return parser.parse_args()
@@ -131,37 +105,40 @@ def extract_json(text: str) -> dict:
   """모델 응답에서 첫 '{'부터 마지막 '}'까지를 잘라 JSON으로 파싱한다."""
   return json.loads(text[text.find("{"):text.rfind("}") + 1])
 
-def predict(endpoint: str, model_name: str, payload_mapper: PayloadMapper, prompt: str) -> bool | None:
+def predict(model_name: str, client: AIClient, prompt: str) -> bool | None:
   """모델에게 검열 여부를 물어보고, 응답을 해석할 수 없으면 None을 반환한다."""
-  request_body = payload_mapper.get_request_body(model_name, prompt)
-  try:
-    response = requests.post(endpoint, json=request_body, headers={"Content-Type": "application/json"}, timeout=300)
-  except requests.RequestException as e:
-    print(f"Failed to send request to {endpoint}: {e}")
+  match client:
+    case VLLMClient():
+      return predict_vllm(model_name, client, prompt)
+    case JeffClient():
+      return predict_jeff(model_name, client, prompt)
+    case _:
+      raise ValueError(f"Unsupported client type: {type(client)}")
+
+def predict_vllm(model_name: str, client: VLLMClient, prompt: str) -> bool | None:
+  success, response = client.call(VLLMRequestPayload(model=model_name, prompt=prompt)) # type: ignore
+  if not success:
+    print(response)
     return None
-  if response.status_code != 200:
-    print(f"Failed to get response from {endpoint} ({response.status_code}): {response.text}")
+  response: VLLMResponsePayload = response
+
+  if not response.message:
+    print(f"Empty response content: {response.raw_data}")
     return None
 
   try:
-    response_content = payload_mapper.get_response_content(response.json())
-  except (ValueError, KeyError, TypeError) as e:
-    print(f"Invalid response format: {e}: {response.text}")
-    return None
-  if not response_content:
-    print(f"Empty response content: {response.text}")
-    return None
-
-  try:
-    response_json = extract_json(response_content)
+    response_json = extract_json(response.message)
   except json.JSONDecodeError:
-    print(f"Failed to parse JSON from response: {response_content}")
+    print(f"Failed to parse JSON from response: {response.message}")
     return None
 
   if "should_censored" not in response_json:
-    print(f"'should_censored' field not found in response: {response_content}")
+    print(f"'should_censored' field not found in response: {response.message}")
     return None
   return response_json["should_censored"]
+
+def predict_jeff(model_name: str, client: JeffClient, prompt: str) -> bool | None:
+  pass
 
 def save_results(path: str, results: dict, elapsed_seconds: float, example_count: int):
   results_json = {category: confusion_matrix.to_dict() for category, confusion_matrix in results.items()}
@@ -172,7 +149,7 @@ def save_results(path: str, results: dict, elapsed_seconds: float, example_count
 
 def main():
   args = parse_args()
-  payload_mapper = args.endpoint_type.get_payload_mapper()
+  client = args.endpoint_type.get_client(endpoint=args.endpoint, api_key=args.api_key)
   dataset = load_dataset(args.data_path)
   prompt_template = load_prompt_template(args.prompt_path)
 
@@ -180,7 +157,7 @@ def main():
   start_time = time.perf_counter()
   for example in tqdm(dataset, desc="Evaluating examples"):
     prompt = build_prompt(prompt_template, example)
-    predicted = predict(args.endpoint, args.model_name, payload_mapper, prompt)
+    predicted = predict(args.model_name, client, prompt)
     if predicted is None:
       continue
 
