@@ -1,0 +1,3 @@
+[submodule "jeff"]
+	path = jeff
+	url = git@github.com:firelex/jeff.git

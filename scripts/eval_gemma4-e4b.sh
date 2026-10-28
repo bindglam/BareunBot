@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "$(dirname "$0")/.."
+
 DATA_PATH=./tests/2/data/eval/eval_dataset.json
 PROMPT_PATH=./tests/2/eval_prompt.advanced.md
 

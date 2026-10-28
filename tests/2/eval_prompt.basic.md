@@ -7,9 +7,3 @@
 {
   should_censored: 검열이 필요할시 true, 아니면 false,
 }
-
----
-
-제목: {title}
-내용:
-{content}

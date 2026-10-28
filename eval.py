@@ -7,8 +7,8 @@ from enum import Enum
 from tqdm import tqdm
 
 from ai import AIClient
-from vllm import VLLMRequestPayload, VLLMResponsePayload, VLLMClient
-from jeff import JeffQuestion, JeffRequestPayload, NoulAnswer, JeffClient
+from vllm_client import VLLMRequestPayload, VLLMResponsePayload, VLLMClient
+from jeff_client import JeffRequestPayload, JeffResponsePayload, JeffClient, JeffQuestion, NoulAnswer
 
 class EndpointType(Enum):
   vllm = "vllm"
@@ -94,29 +94,26 @@ def load_dataset(path: str) -> list:
     raise ValueError("Dataset should be a list of examples.")
   return dataset
 
-def load_prompt_template(path: str) -> str:
+def load_prompt(path: str) -> str:
   with open(path, "r", encoding="utf-8") as f:
     return f.read()
-
-def build_prompt(prompt_template: str, example: dict) -> str:
-  return prompt_template.replace("{title}", "안녕").replace("{content}", example["content"])
 
 def extract_json(text: str) -> dict:
   """모델 응답에서 첫 '{'부터 마지막 '}'까지를 잘라 JSON으로 파싱한다."""
   return json.loads(text[text.find("{"):text.rfind("}") + 1])
 
-def predict(model_name: str, client: AIClient, prompt: str) -> bool | None:
+def predict(model_name: str, client: AIClient, title: str, content: str, prompt: str) -> bool | None:
   """모델에게 검열 여부를 물어보고, 응답을 해석할 수 없으면 None을 반환한다."""
   match client:
     case VLLMClient():
-      return predict_vllm(model_name, client, prompt)
+      return predict_vllm(model_name, client, title, content, prompt)
     case JeffClient():
-      return predict_jeff(model_name, client, prompt)
+      return predict_jeff(model_name, client, title, content, prompt)
     case _:
       raise ValueError(f"Unsupported client type: {type(client)}")
 
-def predict_vllm(model_name: str, client: VLLMClient, prompt: str) -> bool | None:
-  success, response = client.call(VLLMRequestPayload(model=model_name, prompt=prompt)) # type: ignore
+def predict_vllm(model_name: str, client: VLLMClient, title: str, content: str, prompt: str) -> bool | None:
+  success, response = client.call(VLLMRequestPayload(model=model_name, prompt=f"{prompt}\n\n-----------\n\n제목: {title}\n내용: {content}")) # type: ignore
   if not success:
     print(response)
     return None
@@ -137,8 +134,19 @@ def predict_vllm(model_name: str, client: VLLMClient, prompt: str) -> bool | Non
     return None
   return response_json["should_censored"]
 
-def predict_jeff(model_name: str, client: JeffClient, prompt: str) -> bool | None:
-  pass
+def predict_jeff(model_name: str, client: JeffClient, title: str, content: str, prompt: str) -> bool | None:
+  success, response = client.call(JeffRequestPayload(model=model_name, prompt=f"제목: {title}\n내용: {content}",questions=[JeffQuestion(JeffQuestion.Type.NOUL, "block", prompt, {"true": "차단: 욕설·비방·모욕이 담긴 글", "false": "통과: 정상 글"})])) # type: ignore
+  if not success:
+    print(response)
+    return None
+  response: JeffResponsePayload = response
+
+  if not response.answers or "block" not in response.answers:
+    print(f"Empty response content: {response.raw_data}")
+    return None
+
+  response_answer: NoulAnswer = response.answers["block"]  # type: ignore
+  return response_answer.noul >= 0.5 if response_answer.noul is not None else None
 
 def save_results(path: str, results: dict, elapsed_seconds: float, example_count: int):
   results_json = {category: confusion_matrix.to_dict() for category, confusion_matrix in results.items()}
@@ -151,13 +159,12 @@ def main():
   args = parse_args()
   client = args.endpoint_type.get_client(endpoint=args.endpoint, api_key=args.api_key)
   dataset = load_dataset(args.data_path)
-  prompt_template = load_prompt_template(args.prompt_path)
+  prompt = load_prompt(args.prompt_path)
 
   results = { "all": ConfusionMatrix() }
   start_time = time.perf_counter()
   for example in tqdm(dataset, desc="Evaluating examples"):
-    prompt = build_prompt(prompt_template, example)
-    predicted = predict(args.model_name, client, prompt)
+    predicted = predict(args.model_name, client, "안녕", example["content"], prompt)
     if predicted is None:
       continue
 

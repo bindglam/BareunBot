@@ -1,0 +1,38 @@
+# jeff 학습용 이미지 — NVIDIA DGX Spark (GB10, aarch64, sm_121)
+#
+# 베이스의 torch(2.11.0a0+nv, CUDA 13.2)를 그대로 씁니다.
+# GB10은 sm_121인데 이 torch는 compute_120 PTX를 포함하므로 JIT로 동작합니다.
+# pyproject 의 torch==2.14.0 핀은 의도적으로 따르지 않습니다(베이스 torch 사용).
+#
+#   빌드 : docker build -f docker/Dockerfile.gb10 -t jeff-gb10:1 .
+#   실행 : docker/run.sh
+
+FROM nvcr.io/nvidia/vllm:26.03-py3
+
+# torch / torchvision / numpy 는 베이스 것을 유지 (교체하면 GB10 지원이 깨짐)
+RUN pip install --no-cache-dir \
+      transformers==5.17.0 \
+      accelerate==1.15.0 \
+      datasets==5.0.1 \
+      safetensors==0.8.0 \
+      huggingface-hub==1.31.0 \
+      fastapi==0.141.1 \
+      uvicorn==0.52.4 \
+      httpx==0.28.1 \
+      python-dotenv==1.2.3 \
+      matplotlib==3.11.2 \
+      kernels==0.16.1 \
+      flash-linear-attention==0.5.2 \
+      pillow==12.3.0 \
+      imageio-ffmpeg \
+      pytest \
+ && pip cache purge || true
+
+# HF_HOME 은 여기서 고정하지 않습니다 — docker/run.sh 가 호스트 값을 그대로 넘깁니다.
+ENV PYTHONPATH=/workspace/jeff/src \
+    PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /workspace
+ENTRYPOINT []
+CMD ["bash"]
