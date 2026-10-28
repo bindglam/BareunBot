@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # 아고라 검열 모델 — Gemma 4 E2B 풀파인튜닝 (GB10 도커)
 #
-#   agora/train_e2b.sh pilot        → 1스텝만 돌려서 경로 확인
-#   agora/train_e2b.sh              → 본 학습 (LR 기본 2e-5)
-#   LR=1e-5 agora/train_e2b.sh      → 학습률만 바꿔서
-#   SEED=1 RUN=agora-e2b-r2-s1 agora/train_e2b.sh   → 섞는 순서만 바꿔서 (같은 설정 반복 → 흔들림 크기 재기)
+#   scripts/train_gemma-4-e2b.sh pilot        → 1스텝만 돌려서 경로 확인
+#   scripts/train_gemma-4-e2b.sh              → 본 학습 (LR 기본 2e-5)
+#   LR=1e-5 scripts/train_gemma-4-e2b.sh      → 학습률만 바꿔서
+#   SEED=1 RUN=agora-e2b-r2-s1 scripts/train_gemma-4-e2b.sh   → 섞는 순서만 바꿔서 (같은 설정 반복 → 흔들림 크기 재기)
 #
 # 설정 근거
 #   - 2e-5 : jeff 저장소가 Gemma(E2B)에 쓴 학습률 (scripts의 g4 줄)
