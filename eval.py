@@ -113,7 +113,7 @@ def predict(model_name: str, client: AIClient, title: str, content: str, prompt:
       raise ValueError(f"Unsupported client type: {type(client)}")
 
 def predict_vllm(model_name: str, client: VLLMClient, title: str, content: str, prompt: str) -> bool | None:
-  success, response = client.call(VLLMRequestPayload(model=model_name, prompt=f"{prompt}\n\n-----------\n\n제목: {title}\n내용: {content}")) # type: ignore
+  success, response = client.call(VLLMRequestPayload(model=model_name, prompt=f"{prompt}\n\n-----------\n\n{title} {content}")) # type: ignore
   if not success:
     print(response)
     return None
@@ -135,7 +135,7 @@ def predict_vllm(model_name: str, client: VLLMClient, title: str, content: str, 
   return response_json["should_censored"]
 
 def predict_jeff(model_name: str, client: JeffClient, title: str, content: str, prompt: str) -> bool | None:
-  success, response = client.call(JeffRequestPayload(model=model_name, prompt=f"제목: {title}\n내용: {content}",questions=[JeffQuestion(JeffQuestion.Type.NOUL, "block", prompt, {"true": "차단: 욕설·비방·모욕이 담긴 글", "false": "통과: 정상 글"})])) # type: ignore
+  success, response = client.call(JeffRequestPayload(model=model_name, prompt=f"{title} {content}",questions=[JeffQuestion(JeffQuestion.Type.NOUL, "block", prompt, {"true": "차단: 욕설·비하, 저격·사생활, 갈등·차별, 유해 주제, 정치, 운영 방해 중 하나라도 해당하는 글", "false": "통과: 어느 것에도 해당하지 않는 글"})])) # type: ignore
   if not success:
     print(response)
     return None
@@ -164,7 +164,7 @@ def main():
   results = { "all": ConfusionMatrix() }
   start_time = time.perf_counter()
   for example in tqdm(dataset, desc="Evaluating examples"):
-    predicted = predict(args.model_name, client, "안녕", example["content"], prompt)
+    predicted = predict(args.model_name, client, "", example["content"], prompt)
     if predicted is None:
       continue
 

@@ -35,7 +35,7 @@ exec env HF_HUB_OFFLINE=1 DATA_DIR=data/ scripts/train.sh env HF_HUB_OFFLINE=1 J
   --run "runs/$RUN" --output "checkpoints/$RUN" \
   --base-model google/gemma-4-E2B-it \
   --revision 3e22461f65e89153144f8adb70e3b8c2cc9845a7 \
-  --epochs 1 --seed "$SEED" --lr "$LR" --weight-decay 0.01 \
+  --epochs 2 --seed "$SEED" --lr "$LR" --weight-decay 0.01 \
   --batch-size 16 --token-budget 4096 --max-length 1024 \
   --effective-batch-size 64 --eval-every 10 --public-eval-every 1000000 --resume-every 50 \
   --cpu-threads 16 "${extra[@]}"

@@ -1,15 +1,25 @@
 {
   "all": {
-    "true_positive": 11,
+    "true_positive": 32,
     "true_negative": 32,
     "false_positive": 3,
-    "false_negative": 24,
-    "accuracy": 0.6142857142857143,
-    "precision": 0.7857142857142857,
-    "recall": 0.3142857142857143,
-    "f1_score": 0.44897959183673464
+    "false_negative": 3,
+    "accuracy": 0.9142857142857143,
+    "precision": 0.9142857142857143,
+    "recall": 0.9142857142857143,
+    "f1_score": 0.9142857142857143
   },
   "slang": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "sniping": {
     "true_positive": 4,
     "true_negative": 5,
     "false_positive": 0,
@@ -19,66 +29,56 @@
     "recall": 0.8,
     "f1_score": 0.888888888888889
   },
-  "sniping": {
-    "true_positive": 0,
-    "true_negative": 5,
-    "false_positive": 0,
-    "false_negative": 5,
-    "accuracy": 0.5,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1_score": 0.0
-  },
   "conflict": {
-    "true_positive": 2,
-    "true_negative": 4,
-    "false_positive": 1,
-    "false_negative": 3,
-    "accuracy": 0.6,
-    "precision": 0.6666666666666666,
-    "recall": 0.4,
-    "f1_score": 0.5
-  },
-  "unsafe_topic": {
-    "true_positive": 0,
-    "true_negative": 5,
-    "false_positive": 0,
-    "false_negative": 5,
-    "accuracy": 0.5,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1_score": 0.0
-  },
-  "political": {
-    "true_positive": 2,
-    "true_negative": 5,
-    "false_positive": 0,
-    "false_negative": 3,
-    "accuracy": 0.7,
-    "precision": 1.0,
-    "recall": 0.4,
-    "f1_score": 0.5714285714285715
-  },
-  "long_text": {
-    "true_positive": 1,
+    "true_positive": 5,
     "true_negative": 3,
     "false_positive": 2,
-    "false_negative": 4,
-    "accuracy": 0.4,
-    "precision": 0.3333333333333333,
-    "recall": 0.2,
-    "f1_score": 0.25
+    "false_negative": 0,
+    "accuracy": 0.8,
+    "precision": 0.7142857142857143,
+    "recall": 1.0,
+    "f1_score": 0.8333333333333333
   },
-  "other": {
-    "true_positive": 2,
+  "unsafe_topic": {
+    "true_positive": 5,
+    "true_negative": 4,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1_score": 0.9090909090909091
+  },
+  "political": {
+    "true_positive": 3,
     "true_negative": 5,
     "false_positive": 0,
-    "false_negative": 3,
-    "accuracy": 0.7,
+    "false_negative": 2,
+    "accuracy": 0.8,
     "precision": 1.0,
-    "recall": 0.4,
-    "f1_score": 0.5714285714285715
+    "recall": 0.6,
+    "f1_score": 0.7499999999999999
   },
-  "elapsed_seconds": 2.867855969001539,
-  "average_seconds_per_example": 0.040969370985736275
+  "long_text": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "other": {
+    "true_positive": 5,
+    "true_negative": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "elapsed_seconds": 3.3528133910003817,
+  "average_seconds_per_example": 0.04789733415714831
 }
