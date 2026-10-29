@@ -1,0 +1,84 @@
+{
+  "all": {
+    "true_positive": 227,
+    "true_negative": 250,
+    "false_positive": 2,
+    "false_negative": 24,
+    "accuracy": 0.94831013916501,
+    "precision": 0.9912663755458515,
+    "recall": 0.9043824701195219,
+    "f1_score": 0.9458333333333333
+  },
+  "slang": {
+    "true_positive": 28,
+    "true_negative": 35,
+    "false_positive": 1,
+    "false_negative": 8,
+    "accuracy": 0.875,
+    "precision": 0.9655172413793104,
+    "recall": 0.7777777777777778,
+    "f1_score": 0.8615384615384615
+  },
+  "sniping": {
+    "true_positive": 36,
+    "true_negative": 36,
+    "false_positive": 0,
+    "false_negative": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "conflict": {
+    "true_positive": 34,
+    "true_negative": 36,
+    "false_positive": 0,
+    "false_negative": 2,
+    "accuracy": 0.9722222222222222,
+    "precision": 1.0,
+    "recall": 0.9444444444444444,
+    "f1_score": 0.9714285714285714
+  },
+  "unsafe_topic": {
+    "true_positive": 36,
+    "true_negative": 35,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9861111111111112,
+    "precision": 0.972972972972973,
+    "recall": 1.0,
+    "f1_score": 0.9863013698630138
+  },
+  "political": {
+    "true_positive": 35,
+    "true_negative": 36,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9861111111111112,
+    "precision": 1.0,
+    "recall": 0.9722222222222222,
+    "f1_score": 0.9859154929577464
+  },
+  "long_text": {
+    "true_positive": 35,
+    "true_negative": 36,
+    "false_positive": 0,
+    "false_negative": 1,
+    "accuracy": 0.9861111111111112,
+    "precision": 1.0,
+    "recall": 0.9722222222222222,
+    "f1_score": 0.9859154929577464
+  },
+  "other": {
+    "true_positive": 23,
+    "true_negative": 36,
+    "false_positive": 0,
+    "false_negative": 12,
+    "accuracy": 0.8309859154929577,
+    "precision": 1.0,
+    "recall": 0.6571428571428571,
+    "f1_score": 0.7931034482758621
+  },
+  "elapsed_seconds": 1219.7438623060007,
+  "average_seconds_per_example": 2.4201267109246043
+}
