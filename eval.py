@@ -29,6 +29,14 @@ class EndpointType(Enum):
   def __str__(self):
     return self.value
 
+def classify(predicted: bool, actual: bool) -> str:
+  """예측과 정답을 혼동 행렬의 칸 이름(true_positive 등)으로 바꾼다."""
+  if predicted and actual:
+    return "true_positive"
+  if not predicted and not actual:
+    return "true_negative"
+  return "false_positive" if predicted else "false_negative"
+
 @dataclass
 class ConfusionMatrix:
   true_positive: int = 0
@@ -37,14 +45,8 @@ class ConfusionMatrix:
   false_negative: int = 0
 
   def add(self, predicted: bool, actual: bool):
-    if predicted and actual:
-      self.true_positive += 1
-    elif not predicted and not actual:
-      self.true_negative += 1
-    elif predicted:
-      self.false_positive += 1
-    else:
-      self.false_negative += 1
+    outcome = classify(predicted, actual)
+    setattr(self, outcome, getattr(self, outcome) + 1)
 
   def get_accuracy(self) -> float:
     total = self.true_positive + self.true_negative + self.false_positive + self.false_negative
@@ -148,10 +150,12 @@ def predict_jeff(model_name: str, client: JeffClient, title: str, content: str, 
   response_answer: NoulAnswer = response.answers["block"]  # type: ignore
   return response_answer.noul >= 0.5 if response_answer.noul is not None else None
 
-def save_results(path: str, results: dict, elapsed_seconds: float, example_count: int):
+def save_results(path: str, results: dict, predictions: list[dict], elapsed_seconds: float, example_count: int):
   results_json = {category: confusion_matrix.to_dict() for category, confusion_matrix in results.items()}
   results_json["elapsed_seconds"] = elapsed_seconds
   results_json["average_seconds_per_example"] = safe_divide(elapsed_seconds, example_count)
+  results_json["invalid_count"] = sum(prediction["outcome"] == "invalid" for prediction in predictions)
+  results_json["predictions"] = predictions
   with open(path, "w", encoding="utf-8") as f:
     json.dump(results_json, f, indent=2, ensure_ascii=False)
 
@@ -162,19 +166,31 @@ def main():
   prompt = load_prompt(args.prompt_path)
 
   results = { "all": ConfusionMatrix() }
+  predictions = []
   start_time = time.perf_counter()
-  for example in tqdm(dataset, desc="Evaluating examples"):
+  for index, example in enumerate(tqdm(dataset, desc="Evaluating examples")):
     predicted = predict(args.model_name, client, "", example["content"], prompt)
+    actual = example["should_censored"]
+    # 응답을 해석하지 못한 문항은 집계에서 빼되, 어떤 문항이었는지는 invalid로 남긴다
+    outcome = classify(predicted, actual) if predicted is not None else "invalid"
+    predictions.append({
+      "index": index,
+      "category": example["category"],
+      "content": example["content"],
+      "should_censored": actual,
+      "predicted": predicted,
+      "correct": outcome in ("true_positive", "true_negative"),
+      "outcome": outcome
+    })
     if predicted is None:
       continue
 
-    actual = example["should_censored"]
     results.setdefault(example["category"], ConfusionMatrix()).add(predicted, actual)
     results["all"].add(predicted, actual)
 
   elapsed_seconds = time.perf_counter() - start_time
 
-  save_results(args.result_path, results, elapsed_seconds, len(dataset))
+  save_results(args.result_path, results, predictions, elapsed_seconds, len(dataset))
 
 if __name__ == "__main__":
   main()
