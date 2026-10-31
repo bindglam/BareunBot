@@ -29,7 +29,7 @@ if [[ -n "${DATA_DIR:-}" ]]; then
 fi
 cd "$(dirname "$0")/.."
 REPO="$(pwd)"
-IMAGE="${IMAGE:-jeff-gb10:1}"
+IMAGE="${IMAGE:-jeff:1}"
 
 # 호스트의 HF_HOME 을 그대로 사용 (미설정 시 표준 기본값)
 HF_HOME="${HF_HOME:-/home/gogamza/.cache/huggingface}"

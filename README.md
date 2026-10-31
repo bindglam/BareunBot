@@ -23,7 +23,7 @@ tags:
 숫자가 0.5보다 크면 막는 것이 좋다는 뜻입니다.
 
 ```text
-"내일 체육복 챙겨 오는 거 잊지 마!"   → 0.04  (괜찮은 글)
+"내일 체육복 챙겨 오는 거 잊지 마!"   → 0.03  (괜찮은 글)
 "ㅇㅇ이 프사 캡쳐해서 올림 ㅋㅋ"       → 0.71  (막아야 하는 글)
 ```
 
@@ -87,10 +87,9 @@ tags:
 
 ```bash
 git clone https://github.com/firelex/jeff && cd jeff
-uv sync --no-default-groups               # NVIDIA 그래픽카드가 있으면: --extra cuda
+uv sync --no-default-groups --python-preference only-managed   # NVIDIA 그래픽카드가 있으면: --extra cuda
 uv run --no-default-groups hf download bindglam/BareunBot-E2B --local-dir bareunbot-e2b
 JEFF_CHECKPOINT=bareunbot-e2b PORT=8765 JEFF_QUEUE_MS=2000 uv run --no-default-groups jeff-serve
-# 그래픽카드 없이 CPU로만 켜려면 맨 앞에 JEFF_DEVICE=cpu 를 붙이면 됩니다
 ```
 
 서버는 한 번에 글 하나씩만 처리합니다. 여러 개를 한꺼번에 보내면 "바쁨(529)"이라고 답할 수 있으니, 그럴 때는 조금 있다가 다시 보내 주십시오.
@@ -121,7 +120,7 @@ def p_block(post: str) -> float:
     r.raise_for_status()
     return r.json()["answers"]["block"]["noul"]
 
-print(p_block("내일 체육복 챙겨 오는 거 잊지 마!"))   # 0.04 → 통과
+print(p_block("내일 체육복 챙겨 오는 거 잊지 마!"))   # 0.03 → 통과
 print(p_block("ㅇㅇ이 프사 캡쳐해서 올림 ㅋㅋ"))       # 0.71 → 차단
 ```
 

@@ -1,10 +1,9 @@
-# jeff 학습용 이미지 — NVIDIA DGX Spark (GB10, aarch64, sm_121)
+# jeff 학습용 이미지
 #
 # 베이스의 torch(2.11.0a0+nv, CUDA 13.2)를 그대로 씁니다.
-# GB10은 sm_121인데 이 torch는 compute_120 PTX를 포함하므로 JIT로 동작합니다.
 # pyproject 의 torch==2.14.0 핀은 의도적으로 따르지 않습니다(베이스 torch 사용).
 #
-#   빌드 : docker build -f docker/Dockerfile.gb10 -t jeff-gb10:1 .
+#   빌드 : docker build -f docker/Dockerfile -t jeff:1 .
 #   실행 : docker/run.sh
 
 FROM nvcr.io/nvidia/vllm:26.03-py3
