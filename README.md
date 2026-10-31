@@ -185,7 +185,6 @@ CPU로 돌려도 판정 결과는 그래픽카드로 돌렸을 때와 똑같았�
   - 글자 순서를 섞은 패드립
   - 대놓고 말하지 않는 따돌림 ("몇 명은 생일파티 초대 안 받았구나")
   - 새로 생긴 정치 은어
-  - 암호처럼 바꾼 조작 문구(base64)
 - **가끔 잘못 막는 것:** 반끼리 장난으로 경쟁하는 글
 - **새 은어:** 학생들이 쓰는 말은 금방 바뀌어서, 새로 생긴 말은 놓칠 수 있어요.
 - **평가셋 크기:** 최종 평가셋이 210개라서, 1~2개 차이는 운일 수도 있어요.
@@ -201,14 +200,14 @@ CPU로 돌려도 판정 결과는 그래픽카드로 돌렸을 때와 똑같았�
 - 이 모델은 과학기술정보통신부와 한국지능정보사회진흥원(NIA)의 AI 허브(aihub.or.kr)에서 제공한 「텍스트 윤리검증 데이터」를 학습에 활용했습니다.
 - 공개 데이터를 만들어 주신 분들께 감사드려요.
 
-| 데이터 | 링크 | 사용한 개수 |
-|---|---|---|
-| AI 허브 「텍스트 윤리검증 데이터」 | https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=558 | 3,881 |
-| K-MHaS | https://github.com/adlnlp/K-MHaS | 3,242 |
-| KoMultiText | https://github.com/Dasol-Choi/KoMultiText | 2,930 |
-| BEEP! (Korean HateSpeech Dataset) | https://github.com/kocohub/korean-hate-speech | 1,300 |
-| Curse-detection-data | https://github.com/2runo/Curse-detection-data | 861 |
-| APEACH | https://github.com/jason9693/APEACH | 849 |
+| 데이터 | 링크 |
+|---|---|
+| AI 허브 「텍스트 윤리검증 데이터」 | https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=558 |
+| K-MHaS | https://github.com/adlnlp/K-MHaS |
+| KoMultiText | https://github.com/Dasol-Choi/KoMultiText |
+| BEEP! (Korean HateSpeech Dataset) | https://github.com/kocohub/korean-hate-speech |
+| Curse-detection-data | https://github.com/2runo/Curse-detection-data |
+| APEACH | https://github.com/jason9693/APEACH |
 
 ## 만든 사람
 - **bindglam**: 아고라 게시판에 쓸 바른봇을 기획하고 만들었어요. 판정 기준 설계, 학습·평가 데이터 구축과 검수, 모델 학습과 평가를 진행했어요.
